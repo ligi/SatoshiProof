@@ -1,0 +1,7 @@
+.gradle/
+gradle/
+.idea/
+SatoshiProof/build
+gradlew
+gradlew.bat
+*.iml
