@@ -25,6 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+                android:name="org.ligi.satoshiproof.HelpDialogActivity" android:theme="@style/AppThemeDialog">
+
+        </activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.provider.MediaStore;
 
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import org.apache.commons.io.FileUtils;
@@ -102,5 +103,14 @@ public class MainActivity extends Activity {
 
     }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_help:
+                Intent helpIntent = new Intent(this, HelpDialogActivity.class);
+                startActivity(helpIntent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
