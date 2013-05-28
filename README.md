@@ -1,3 +1,8 @@
+<a href="https://play.google.com/store/apps/details?id=org.ligi.satoshiproof">
+  <img alt="Android app on Google Play"
+       src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
+</a>
+
 <h1>What is this all about?</h1>
 
 Satoshi Proof is your personal notary leveraging the power of the Bitcoin network to prove existence of text or images at a certain time.
