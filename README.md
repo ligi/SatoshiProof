@@ -27,3 +27,6 @@ This app is licensed <a href="http://gplv3.fsf.org/">GPLv3</a> - you can find th
 <p>
     <a href="https://blockexplorer.com/">https://blockexplorer.com</a> for the API to check for address existence
 </p>
+<p>
+    <a href="https://plus.google.com/109645840809543546390">Mister Schtief</a> for donating me 0.1BTC which made the barrier low to start this
+</p>
