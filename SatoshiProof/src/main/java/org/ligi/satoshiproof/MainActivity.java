@@ -110,6 +110,10 @@ public class MainActivity extends Activity {
                 Intent helpIntent = new Intent(this, HelpDialogActivity.class);
                 startActivity(helpIntent);
                 break;
+            case R.id.action_hash:
+                Intent hashIntent = new Intent(this, LastHashActivity.class);
+                startActivity(hashIntent);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -4,4 +4,10 @@
         android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_help"
         android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_hash"
+          android:title="last hash"
+          android:orderInCategory="200"
+          android:icon="@android:drawable/ic_menu_agenda"
+          android:showAsAction="ifRoom" />
 </menu>
