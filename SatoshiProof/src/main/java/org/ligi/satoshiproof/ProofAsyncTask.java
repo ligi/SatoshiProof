@@ -15,6 +15,11 @@ import org.ligi.androidhelper.helpers.dialog.DialogDiscardingOnClickListener;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 /**
 * Created by ligi on 5/26/13.
@@ -75,7 +80,20 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
             });
 
         } else {
-            alertBuilder.setMessage("The existence of this was proven on:" + s);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date=null;
+            try {
+                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+                date=dateFormat.parse(s);
+            } catch (ParseException e) {
+            }
+
+            String dateString=s + " UTC";
+            if (date!=null) {
+                dateString=date.toString();
+            }
+
+            alertBuilder.setMessage("The existence of this was proven on:" + dateString);
         }
         alertBuilder.show();
         super.onPostExecute(s);
