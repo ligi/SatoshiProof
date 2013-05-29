@@ -3,6 +3,7 @@ package org.ligi.satoshiproof;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Handler;
@@ -34,7 +35,43 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.textToProof);
         setupButtons();
+        checkForMaterialToProveFromIntent();
     }
+
+    private void checkForMaterialToProveFromIntent() {
+        // Get intent, action and MIME type
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
+
+        if (Intent.ACTION_SEND.equals(action) && type != null) {
+            if ("text/plain".equals(type)) {
+                handleSendText(intent); // Handle text being sent
+            } else {
+                handleSendStream(intent); // Handle single image being sent
+            }
+        }
+    }
+
+    void handleSendText(Intent intent) {
+        String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+        if (sharedText != null) {
+            showProgressDialog();
+            new ProofAsyncTask(MainActivity.this, sharedText.getBytes()).execute();
+        }
+    }
+
+    void handleSendStream(Intent intent) {
+        Uri imageUri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
+        if (imageUri != null) {
+            showProgressDialog();
+            final ImageFromIntentUriExtractor imageExtractor = new ImageFromIntentUriExtractor(MainActivity.this);
+            File bitmapFile = imageExtractor.extract(imageUri);
+            proofFile(bitmapFile );
+
+        }
+    }
+
 
     private void setupButtons() {
         findViewById(R.id.proofTextButton).setOnClickListener(new View.OnClickListener() {
@@ -66,9 +103,7 @@ public class MainActivity extends Activity {
         switch (requestCode) {
             case ACTIVITY_SELECT_IMAGE:
                 if (resultCode == RESULT_OK) {
-                    progressDialog = new ProgressDialog(this);
-                    progressDialog.setMessage("Fetching file");
-                    progressDialog.show();
+                    showProgressDialog();
                     final ImageFromIntentUriExtractor imageExtractor = new ImageFromIntentUriExtractor(MainActivity.this);
                     new Thread(new Runnable() {
 
@@ -82,6 +117,12 @@ public class MainActivity extends Activity {
                     }).start();
                 }
         }
+    }
+
+    private void showProgressDialog() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Fetching file");
+        progressDialog.show();
     }
 
     private void proofFile(final File file) {
