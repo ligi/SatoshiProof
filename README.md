@@ -18,6 +18,9 @@ The money is going nowhere ( or to a random stranger ) - but it is so little tha
 <p> - Prove that a certain damage existed before a given time ( rental cars, flats, .. ) by proving the existence of an image of this damage at a certain time</p>
 <p> - Prove that a certain idea ( text ) was existing before a given time ( e.g. for prior art arguments against patents )</p>
 
+<h1>Questions/Feedback:</h1>
+there is a <a href="https://plus.google.com/communities/116290978952142109862">Google+ Community</a>
+
 <h1>License</h1>
 This app is licensed <a href="http://gplv3.fsf.org/">GPLv3</a> - you can find the <a href="https://github.com/ligi/SatoshiProof">sourcecode on github</a>.
 <h1>Credits</h1>
