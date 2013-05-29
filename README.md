@@ -1,5 +1,8 @@
 <a href="https://play.google.com/store/apps/details?id=org.ligi.satoshiproof">
   <img alt="Android app on Google Play"
+       src="SatoshiProof/promo/1024x500.png" />
+
+  <img alt="Android app on Google Play"
        src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
 </a>
 
