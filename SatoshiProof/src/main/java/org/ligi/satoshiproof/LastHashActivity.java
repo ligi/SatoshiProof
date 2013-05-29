@@ -42,7 +42,9 @@ public class LastHashActivity extends Activity {
         @Override
         protected void onPostExecute(String s) {
             String url = "http://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=" + s.replace("\n", "");
-            aQuery.id(R.id.hash_image).image(url, true, false);
+            AQuery hashImage = aQuery.id(R.id.hash_image);
+            hashImage.visible();
+            hashImage.image(url, true, false); // memcache yes - disk no as we want recent stuff
             aQuery.id(R.id.hash_text).text(s);
             super.onPostExecute(s);
         }
