@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.TextView;
 import org.apache.commons.io.FileUtils;
 import org.ligi.androidhelper.helpers.dialog.DialogDiscardingOnClickListener;
+import org.ligi.tracedroid.TraceDroid;
+import org.ligi.tracedroid.sending.TraceDroidEmailSender;
 
 import java.io.*;
 
@@ -31,8 +33,13 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         handler = new Handler();
         setContentView(R.layout.activity_main);
+
+        TraceDroid.init(this);
+        TraceDroidEmailSender.sendStackTraces("ligi@ligi.de",this);
+
         textView = (TextView) findViewById(R.id.textToProof);
         setupButtons();
         checkForMaterialToProveFromIntent();
@@ -130,18 +137,25 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 try {
+                    if (file==null) {
+                        failWitAlertDialog("Could not open file");
+                        return;
+                    }
                     byte[] imageBytes = FileUtils.readFileToByteArray(file);
                     new ProofAsyncTask(MainActivity.this, imageBytes).execute();
                     progressDialog.dismiss();
-                } catch (IOException e) {
-                    new AlertDialog.Builder(MainActivity.this).setMessage("Could not open " + file + " " + e)
-                            .setPositiveButton("OK", new DialogDiscardingOnClickListener()).show();
-
+                } catch (Exception e) {
+                    failWitAlertDialog("Could not open " + file + " " + e);
                 }
-
             }
         });
 
+    }
+
+    private void failWitAlertDialog(String msg) {
+        progressDialog.dismiss();
+        new AlertDialog.Builder(this).setMessage(msg)
+                .setPositiveButton("OK", new DialogDiscardingOnClickListener()).show();
     }
 
     @Override
