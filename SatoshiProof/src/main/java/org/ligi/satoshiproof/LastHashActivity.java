@@ -2,7 +2,10 @@ package org.ligi.satoshiproof;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
+
 import com.androidquery.AQuery;
 import org.ligi.androidhelper.AndroidHelper;
 
@@ -23,6 +26,20 @@ public class LastHashActivity extends Activity {
         setContentView(R.layout.last_hash);
         aQuery = new AQuery(this);
         new FetchLastHashAsyncTask().execute();
+        if (Build.VERSION.SDK_INT>=11) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     class FetchLastHashAsyncTask extends AsyncTask<Void, Void, String> {
