@@ -10,9 +10,13 @@
 
     <TextView
             android:text="The last bitcoin hash to prove existence of a photo containing this screen [1] after a certain time will appear here. If not please check your connectivity [1] ( better use a tablet )"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
             android:id="@+id/hash_text"
+            android:gravity="center"
+
             android:textSize="32sp"
             />
+
 </merge>
