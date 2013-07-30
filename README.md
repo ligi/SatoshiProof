@@ -1,12 +1,8 @@
-<a href="https://play.google.com/store/apps/details?id=org.ligi.satoshiproof">
-  <img alt="Android app on Google Play"
-       src="SatoshiProof/promo/180x120.png" />
-</a>
+[![Build Status](https://ligi.ci.cloudbees.com/job/SatoshiProof/badge/icon)](https://ligi.ci.cloudbees.com/job/SatoshiProof/)
 
-<a href="https://play.google.com/store/apps/details?id=org.ligi.satoshiproof">
-  <img alt="Android app on Google Play"
-       src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
-</a>
+[![Android app on Google Play](SatoshiProof/promo/180x120.png)](https://play.google.com/store/apps/details?id=org.ligi.satoshiproof)
+
+[![Android app on Google Play](https://developer.android.com/images/brand/en_app_rgb_wo_60.png)](https://play.google.com/store/apps/details?id=org.ligi.satoshiproof)
 
 <h1>What is this all about?</h1>
 
