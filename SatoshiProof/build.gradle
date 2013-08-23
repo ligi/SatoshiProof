@@ -22,7 +22,7 @@ dependencies {
     compile "org.apache.commons:commons-io:1.3.2"
     compile "org.slf4j:slf4j-api:1.7.5"
     compile "com.google.guava:guava:14.0.+"
-    compile "com.googlecode.android-query:android-query:0.25.+"
+    compile "com.googlecode.android-query:android-query:0.25.+"y
 
     compile "com.android.support:support-v4:18.0.0"
 
@@ -32,10 +32,10 @@ dependencies {
 
 android {
     compileSdkVersion 18
-    buildToolsVersion "17.0.0"
+    buildToolsVersion "18.0.1"
 
     defaultConfig {
         minSdkVersion 7
-        targetSdkVersion 16
+        targetSdkVersion 18
     }
 }
