@@ -7,14 +7,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.androidquery.AQuery;
-import org.ligi.androidhelper.AndroidHelper;
+
+import org.ligi.axt.AXT;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by ligi on 5/28/13.
- */
 public class LastHashActivity extends Activity {
 
     private AQuery aQuery;
@@ -49,7 +47,7 @@ public class LastHashActivity extends Activity {
             String res = null;
             try {
                 URL url = new URL("https://blockexplorer.com/q/latesthash");
-                res = AndroidHelper.at(url).downloadToString();
+                res = AXT.at(url).downloadToString();
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
