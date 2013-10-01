@@ -10,7 +10,7 @@ import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.NetworkParameters;
 import com.google.bitcoin.core.Utils;
 import de.schildbach.wallet.integration.android.BitcoinIntegration;
-import org.ligi.androidhelper.AndroidHelper;
+import org.ligi.axt.AXT;
 import org.ligi.androidhelper.helpers.dialog.DialogDiscardingOnClickListener;
 
 import java.net.MalformedURLException;
@@ -58,7 +58,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
         try {
             URL url = new URL("http://blockexplorer.com/q/addressfirstseen/"+address.toString());
-            return AndroidHelper.at(url).downloadToString();
+            return AXT.at(url).downloadToString();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
