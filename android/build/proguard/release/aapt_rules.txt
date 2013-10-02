@@ -1,0 +1,12 @@
+# view res/layout/last_hash_inner.xml #generated:4
+-keep class org.ligi.androidhelper.views.SquareImageView { <init>(...); }
+
+# view AndroidManifest.xml #generated:35
+-keep class org.ligi.satoshiproof.HelpDialogActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:36
+-keep class org.ligi.satoshiproof.LastHashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:9
+-keep class org.ligi.satoshiproof.MainActivity { <init>(...); }
+

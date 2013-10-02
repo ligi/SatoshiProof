@@ -1,0 +1,18 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1380585452000 4713 ab0a2394efd8bfbc8a7350a1c4330c535a56655d /home/ligi/git/SatoshiProof/android/build/res/all/debug/drawable-hdpi/ic_launcher.png
+1380747734000 769 e9ab3a53f7c5bfd2a87beaf887c7df090336931c /home/ligi/git/SatoshiProof/android/build/res/all/debug/layout-land/last_hash.xml
+1380747735000 436 480734cfc8e0efd53d7ea6e3ee08f6eb03532194 /home/ligi/git/SatoshiProof/android/build/res/all/debug/layout/help_dialog.xml
+1380747734000 298 80f6a7491dad5b887ec3effb5657b89ba1e38c88 /home/ligi/git/SatoshiProof/android/build/res/all/debug/values-v11/values.xml
+1380747734000 903 e764b06fab6289abcf6b843442e90ca532a8239a /home/ligi/git/SatoshiProof/android/build/res/all/debug/layout/last_hash_inner.xml
+1380747734000 229 f0a761eaa17cc1a8ed4686a54047643a6218a00c /home/ligi/git/SatoshiProof/android/build/res/all/debug/values-sw720dp-land/values.xml
+1380747734000 762 f76a47bcd7edf72c87e1115c15af978bdf26a6f5 /home/ligi/git/SatoshiProof/android/build/res/all/debug/layout/last_hash.xml
+1380747734000 1112 24c0773562282a1a719e4ae2da0be7243a995126 /home/ligi/git/SatoshiProof/android/build/res/all/debug/values/values.xml
+1380585452000 2207 b9e98915c067090d000bb18abf0c12ec5091f707 /home/ligi/git/SatoshiProof/android/build/res/all/debug/raw/help.html
+1380747734000 591 7e3384e91a14bd0d0332dacad22511963edf79f1 /home/ligi/git/SatoshiProof/android/build/res/all/debug/menu/main.xml
+1380585452000 2589 2d4d8a7168a7ac5eafedc23ee1bca0eca77e854b /home/ligi/git/SatoshiProof/android/build/res/all/debug/drawable-mdpi/ic_launcher.png
+1380747734000 1691 42556313029a65d279595d0125926b23a483e4ba /home/ligi/git/SatoshiProof/android/build/res/all/debug/layout/activity_main.xml
+1380585452000 11802 21102f09f48c489b5bfc8f2ccf8bfc77e0de025b /home/ligi/git/SatoshiProof/android/build/res/all/debug/drawable-xxhdpi/ic_launcher.png
+1380747734000 312 1b5062d774b2dffcc99c99de7684f63315083d7c /home/ligi/git/SatoshiProof/android/build/res/all/debug/values-v14/values.xml
+1380585452000 6868 833e50550eb9c2e3acebe572618bb83ad38d60b6 /home/ligi/git/SatoshiProof/android/build/res/all/debug/drawable-xhdpi/ic_launcher.png

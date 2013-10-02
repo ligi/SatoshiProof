@@ -1,0 +1,21 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1369566741000 2791 b9e2a290694a385af9d52ce08d450b3f2e27da0c /home/ligi/git/SatoshiProof/android/src/main/res/drawable-mdpi/ic_launcher.png
+1369566742000 381 b129b276e01126de5b3b753572ac67cbfc19454c /home/ligi/git/SatoshiProof/android/src/main/res/values-v14/styles.xml
+1369686064000 162 7d514d963197b4d96af5e8ea0e783c6b1869370d /home/ligi/git/SatoshiProof/android/src/main/res/values/strings.xml
+1369683891000 1598 7fbf1a1eb43a7a5082f0615c69f463f0cd743f25 /home/ligi/git/SatoshiProof/android/src/main/res/layout/activity_main.xml
+1369566742000 324 aa1f5f1723de9aee2669dc44a26fbc0ce776d35f /home/ligi/git/SatoshiProof/android/src/main/res/values-v11/styles.xml
+1369827716000 675 3a7b1f5a9ae939f91cd1a33fa98cd1c97c6d0dfe /home/ligi/git/SatoshiProof/android/src/main/res/layout-land/last_hash.xml
+1369827494000 808 ef158b66d9e7536f89952e15e33b5ece8b08ed88 /home/ligi/git/SatoshiProof/android/src/main/res/layout/last_hash_inner.xml
+1369566742000 254 25b6404e44acb50c82590049639d4fb5fefbac8e /home/ligi/git/SatoshiProof/android/src/main/res/values-sw720dp-land/dimens.xml
+1369867337000 2207 b9e98915c067090d000bb18abf0c12ec5091f707 /home/ligi/git/SatoshiProof/android/src/main/res/raw/help.html
+1369566741000 5366 baa789bd1a8f0c46085ef914b2cf91f14bbb489a /home/ligi/git/SatoshiProof/android/src/main/res/drawable-hdpi/ic_launcher.png
+1369566741000 8093 4ea6049bae2721659fb616c4cf24d27f97b2fb35 /home/ligi/git/SatoshiProof/android/src/main/res/drawable-xhdpi/ic_launcher.png
+1369729112000 345 6673816d2b4b6d92a5ffd88598fd5dbdd54d7744 /home/ligi/git/SatoshiProof/android/src/main/res/layout/help_dialog.xml
+1369753656000 509 711f740f81b804d07b18e565322a295c19f5b316 /home/ligi/git/SatoshiProof/android/src/main/res/menu/main.xml
+1369757706000 753 9234d651540fbb29907307eae6e643712eb9d9fd /home/ligi/git/SatoshiProof/android/src/main/res/values/styles.xml
+1369566742000 181 84de2797380184d8b39af6f829afb092fb956173 /home/ligi/git/SatoshiProof/android/src/main/res/values-sw600dp/dimens.xml
+1369566741000 14226 fcfb7dee7d7d4feaa6421307d2e378a7b5ee283f /home/ligi/git/SatoshiProof/android/src/main/res/drawable-xxhdpi/ic_launcher.png
+1369729125000 254 5f9aa6f311f22854d40f615d2618d1900f02d50a /home/ligi/git/SatoshiProof/android/src/main/res/values/dimens.xml
+1369827710000 673 36b6b186b75d833f8e515e493ea44972ab3b73a4 /home/ligi/git/SatoshiProof/android/src/main/res/layout/last_hash.xml

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <org.ligi.androidhelper.views.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/hash_image"
+            />
+
+    <TextView
+            android:text="The last bitcoin hash to prove existence of a photo containing this screen [1] after a certain time will appear here. If not please check your connectivity [1] ( better use a tablet )"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            android:id="@+id/hash_text"
+            android:gravity="center"
+
+            android:textSize="32sp"
+            />
+
+</merge>
