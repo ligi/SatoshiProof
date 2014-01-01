@@ -1,6 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="4" android:versionName="0.4" package="org.ligi.satoshiproof">
+<!-- From: file:/home/ligi/git/SatoshiProof/android/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="4" android:versionName="0.4" package="org.ligi.satoshiproof">
 
-    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="18"/>
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="19"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>

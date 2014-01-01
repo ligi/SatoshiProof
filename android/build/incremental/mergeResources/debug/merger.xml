@@ -4,97 +4,6 @@
     <dataSet config="main" >
         <source path="/home/ligi/git/SatoshiProof/android/src/main/res" >
             <file
-                name="ic_launcher"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/drawable-xhdpi/ic_launcher.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/values-sw720dp-land/dimens.xml"
-                qualifiers="sw720dp-land" >
-                <dimen name="activity_horizontal_margin" >128dp
-                </dimen>
-            </file>
-            <file
-                name="help_dialog"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout/help_dialog.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="last_hash_inner"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout/last_hash_inner.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_main"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout/activity_main.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="last_hash"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout/last_hash.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="last_hash"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout-land/last_hash.xml"
-                qualifiers="land"
-                type="layout" />
-            <file
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/values-v14/styles.xml"
-                qualifiers="v14" >
-
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Holo.Light.DarkActionBar" >
-
-                    <!-- API 14 theme customizations can go here. -->
-                </style>
-            </file>
-            <file
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/values-v11/styles.xml"
-                qualifiers="v11" >
-
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Holo.Light" >
-
-                    <!-- API 11 theme customizations can go here. -->
-                </style>
-            </file>
-            <file
-                name="ic_launcher"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/drawable-mdpi/ic_launcher.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="main"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/menu/main.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="help"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/raw/help.html"
-                qualifiers=""
-                type="raw" />
-            <file
-                name="ic_launcher"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/drawable-xxhdpi/ic_launcher.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_launcher"
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/drawable-hdpi/ic_launcher.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                path="/home/ligi/git/SatoshiProof/android/src/main/res/values/strings.xml"
-                qualifiers="" >
-                <string name="action_help" >Help
-                </string>
-                <string name="app_name" >Satoshi Proof
-                </string>
-            </file>
-            <file
                 path="/home/ligi/git/SatoshiProof/android/src/main/res/values/styles.xml"
                 qualifiers="" >
 
@@ -121,6 +30,14 @@
                 </style>
             </file>
             <file
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="action_help" >Help
+                </string>
+                <string name="app_name" >Satoshi Proof
+                </string>
+            </file>
+            <file
                 path="/home/ligi/git/SatoshiProof/android/src/main/res/values/dimens.xml"
                 qualifiers="" >
                 <dimen name="activity_horizontal_margin" >16dp
@@ -130,6 +47,89 @@
                 <dimen name="help_padding" >5dp
                 </dimen>
             </file>
+            <file
+                name="ic_launcher"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                name="ic_launcher"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="help"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/raw/help.html"
+                qualifiers=""
+                type="raw" />
+            <file
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                name="last_hash"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout-land/last_hash.xml"
+                qualifiers="land"
+                type="layout" />
+            <file
+                name="ic_launcher"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="main"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                name="activity_main"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="help_dialog"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout/help_dialog.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="last_hash"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout/last_hash.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="last_hash_inner"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/layout/last_hash_inner.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="ic_launcher"
+                path="/home/ligi/git/SatoshiProof/android/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
         </source>
         <source path="/home/ligi/git/SatoshiProof/android/build/res/rs/debug" />
     </dataSet>

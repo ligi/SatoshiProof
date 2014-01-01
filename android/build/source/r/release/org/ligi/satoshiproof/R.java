@@ -11,9 +11,6 @@ public final class R {
     public static final class attr {
     }
     public static final class dimen {
-        /**  From: file:/home/ligi/git/SatoshiProof/android/src/main/res/values/dimens.xml 
- From: file:/home/ligi/git/SatoshiProof/android/src/main/res/values-sw720dp-land/dimens.xml 
-         */
         public static final int activity_horizontal_margin=0x7f050000;
         public static final int activity_vertical_margin=0x7f050001;
         public static final int help_padding=0x7f050002;
@@ -44,21 +41,16 @@ public final class R {
         public static final int help=0x7f040000;
     }
     public static final class string {
-        /**  From: file:/home/ligi/git/SatoshiProof/android/src/main/res/values/strings.xml 
-         */
         public static final int action_help=0x7f060000;
         public static final int app_name=0x7f060001;
     }
     public static final class style {
-        /**  From: file:/home/ligi/git/SatoshiProof/android/src/main/res/values/styles.xml 
-
+        /** 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
- From: file:/home/ligi/git/SatoshiProof/android/src/main/res/values-v11/styles.xml 
  API 11 theme customizations can go here. 
- From: file:/home/ligi/git/SatoshiProof/android/src/main/res/values-v14/styles.xml 
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f070000;
