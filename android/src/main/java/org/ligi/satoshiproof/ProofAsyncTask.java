@@ -19,6 +19,7 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /**
@@ -70,7 +71,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
         progressDialog.dismiss();
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(context);
         alertBuilder.setPositiveButton("OK",new DialogDiscardingOnClickListener());
-        if (s.toLowerCase().startsWith("never seen")) {
+        if (s.toLowerCase(Locale.getDefault()).startsWith("never seen")) {
             alertBuilder.setMessage("The existence of this is not proven yet.");
             alertBuilder.setNeutralButton("Add Proof",new DialogInterface.OnClickListener() {
                 @Override

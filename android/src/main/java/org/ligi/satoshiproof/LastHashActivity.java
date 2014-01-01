@@ -1,5 +1,6 @@
 package org.ligi.satoshiproof;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -24,6 +25,11 @@ public class LastHashActivity extends Activity {
         setContentView(R.layout.last_hash);
         aQuery = new AQuery(this);
         new FetchLastHashAsyncTask().execute();
+        setDisplayHomeAsUpEnabledIfPossible();
+    }
+
+    @TargetApi(1)
+    private void setDisplayHomeAsUpEnabledIfPossible() {
         if (Build.VERSION.SDK_INT>=11) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
