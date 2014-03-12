@@ -1,7 +1,7 @@
 .gradle/
 gradle/
 .idea/
-android/build
+android/build/
 gradlew
 gradlew.bat
 *.iml
