@@ -16,12 +16,17 @@ repositories {
 }
 
 dependencies {
+    // compile "com.google:bitcoinj:0.11.1"
+    // the above looks like a really good idea, but unfortunately the apk resulting from this
+    // is broken in the way that it is marked as available only for x86_64 - which are 0 devices
+    // in google play at the moment - something strange gets pulled in there
+
     compile files('libs/bitcoinj-0.8.jar')
 
     compile "com.madgag:sc-light-jdk15on:1.47.0.2"
     compile "org.apache.commons:commons-io:1.3.2"
     compile "org.slf4j:slf4j-api:1.7.5"
-    compile "com.google.guava:guava:14.0.+"
+    compile "com.google.guava:guava:16.0.+"
     compile "com.googlecode.android-query:android-query:0.25.+"
 
     compile "com.android.support:support-v4:19.1.0"
