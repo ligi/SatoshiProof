@@ -20,6 +20,7 @@ dependencies {
     // the above looks like a really good idea, but unfortunately the apk resulting from this
     // is broken in the way that it is marked as available only for x86_64 - which are 0 devices
     // in google play at the moment - something strange gets pulled in there
+    // http://stackoverflow.com/questions/22730620/bad-apk-when-using-bitcoinj-from-maven-central
 
     compile files('libs/bitcoinj-0.8.jar')
 
