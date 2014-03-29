@@ -14,15 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import org.apache.commons.io.FileUtils;
-import org.ligi.androidhelper.helpers.dialog.DialogDiscardingOnClickListener;
+import org.ligi.axt.helpers.dialog.DialogDiscardingOnClickListener;
 import org.ligi.tracedroid.TraceDroid;
 import org.ligi.tracedroid.sending.TraceDroidEmailSender;
 
 import java.io.*;
 
-/**
- * Created by ligi on 5/26/13.
- */
 public class MainActivity extends Activity {
 
     private static final int ACTIVITY_SELECT_IMAGE = 1;

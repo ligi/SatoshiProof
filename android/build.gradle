@@ -24,9 +24,9 @@ dependencies {
     compile "com.google.guava:guava:14.0.+"
     compile "com.googlecode.android-query:android-query:0.25.+"
 
-    compile "com.android.support:support-v4:18.0.0"
+    compile "com.android.support:support-v4:19.1.0"
 
-    compile 'org.ligi:AXT:0.21'
+    compile 'org.ligi:AXT:0.25'
     compile 'org.ligi:tracedroid:1.1'
 }
 

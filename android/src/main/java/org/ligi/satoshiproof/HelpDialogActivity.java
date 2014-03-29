@@ -10,9 +10,6 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Created by ligi on 5/27/13.
- */
 public class HelpDialogActivity extends Activity {
 
     @Override

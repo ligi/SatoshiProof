@@ -5,26 +5,21 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.util.Log;
 import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.NetworkParameters;
 import com.google.bitcoin.core.Utils;
 import de.schildbach.wallet.integration.android.BitcoinIntegration;
 import org.ligi.axt.AXT;
-import org.ligi.androidhelper.helpers.dialog.DialogDiscardingOnClickListener;
+import org.ligi.axt.helpers.dialog.DialogDiscardingOnClickListener;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Date;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/**
-* Created by ligi on 5/26/13.
-*/
 class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
     private ProgressDialog progressDialog;

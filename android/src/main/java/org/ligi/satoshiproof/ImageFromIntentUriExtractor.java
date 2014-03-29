@@ -11,9 +11,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 
-/**
- * Created by ligi on 5/27/13.
- */
 public class ImageFromIntentUriExtractor {
 
     final Context context;
