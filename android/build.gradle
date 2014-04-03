@@ -44,7 +44,7 @@ android {
         versionCode 5
     }
 
-    lintOptions { 
-      abortOnError false 
-    } 
+    lintOptions {
+        disable 'HardcodedText'
+    }
 }

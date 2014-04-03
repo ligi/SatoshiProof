@@ -28,7 +28,7 @@ public class LastHashActivity extends Activity {
         setDisplayHomeAsUpEnabledIfPossible();
     }
 
-    @TargetApi(1)
+    @TargetApi(11)
     private void setDisplayHomeAsUpEnabledIfPossible() {
         if (Build.VERSION.SDK_INT>=11) {
             getActionBar().setDisplayHomeAsUpEnabled(true);

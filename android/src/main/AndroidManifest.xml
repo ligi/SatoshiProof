@@ -41,7 +41,9 @@
         <activity
                 android:name="org.ligi.satoshiproof.HelpDialogActivity"
                 android:theme="@style/AppThemeDialog"/>
-        <activity android:name="org.ligi.satoshiproof.LastHashActivity"/>
+        <activity android:name="org.ligi.satoshiproof.LastHashActivity"
+                  android:theme="@style/AppThemeWhiteBG"
+            />
     </application>
 
 </manifest>

@@ -76,7 +76,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
             });
 
         } else {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",Locale.ENGLISH);
             Date date=null;
             try {
                 dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
