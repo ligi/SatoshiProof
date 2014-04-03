@@ -16,13 +16,9 @@ repositories {
 }
 
 dependencies {
-    // compile "com.google:bitcoinj:0.11.1"
-    // the above looks like a really good idea, but unfortunately the apk resulting from this
-    // is broken in the way that it is marked as available only for x86_64 - which are 0 devices
-    // in google play at the moment - something strange gets pulled in there
-    // http://stackoverflow.com/questions/22730620/bad-apk-when-using-bitcoinj-from-maven-central
-
-    compile files('libs/bitcoinj-0.8.jar')
+    compile "com.google:bitcoinj:0.11.1@jar"
+    // the above @jar is important
+    // context: http://stackoverflow.com/questions/22730620/bad-apk-when-using-bitcoinj-from-maven-central
 
     compile "com.madgag:sc-light-jdk15on:1.47.0.2"
     compile "org.apache.commons:commons-io:1.3.2"
