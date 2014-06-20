@@ -5,10 +5,11 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.MediaStore;
 
+import org.ligi.axt.AXT;
+
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URL;
 
 public class ImageFromIntentUriExtractor {
@@ -38,11 +39,11 @@ public class ImageFromIntentUriExtractor {
                     final Uri uriurl = selectedImage;
                     // Do this in a background thread, since we are fetching a large image from the web
 
-                     return getBitmap("image_file_name.jpg", uriurl);
+                    return getBitmap("image_file_name.jpg", uriurl);
 
                 }
             } else { // it is a regular local image file
-                String filePath = cursor.getString(columnIndex);
+                final String filePath = cursor.getString(columnIndex);
                 cursor.close();
                 return new File(filePath);
             }
@@ -52,52 +53,37 @@ public class ImageFromIntentUriExtractor {
             final Uri uriurl = selectedImage;
             // Do this in a background thread, since we are fetching a large image from the web
             return getBitmap("image_file_name.jpg", uriurl);
-
         }
         return null;
     }
 
 
     private File getBitmap(String tag, Uri url) {
-        File cacheDir;
-        // if the device has an SD card
-        if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
-            cacheDir = new File(android.os.Environment.getExternalStorageDirectory(), ".OCFL311");
-        } else {
-            // it does not have an SD card
-            cacheDir = context.getCacheDir();
+        final File cacheDir = context.getCacheDir();
+
+        if (!cacheDir.exists()) {
+            cacheDir.mkdirs();
         }
 
-
-        cacheDir = context.getCacheDir();
-
-        if (!cacheDir.exists())
-            cacheDir.mkdirs();
-
-        File f = new File(cacheDir, tag);
+        final File f = new File(cacheDir, tag);
 
         try {
-            InputStream is = null;
-            if (url.toString().startsWith("content://com.google.android.gallery3d")) {
-                is = context.getContentResolver().openInputStream(url);
-            } else {
-                is = new URL(url.toString()).openStream();
-            }
-            OutputStream os = new FileOutputStream(f);
-
-            byte[] buffer = new byte[1024];
-            int len;
-            while ((len = is.read(buffer)) != -1) {
-                os.write(buffer, 0, len);
-            }
-
-
-            os.close();
+            final InputStream is = getInputStreamByURL(url);
+            AXT.at(is).toFile(f);
             return f;
         } catch (Exception ex) {
-
             ex.printStackTrace();
             return null;
         }
+    }
+
+    private InputStream getInputStreamByURL(Uri url) throws IOException {
+        InputStream is;
+        if (url.toString().startsWith("content://com.google.android.gallery3d")) {
+            is = context.getContentResolver().openInputStream(url);
+        } else {
+            is = new URL(url.toString()).openStream();
+        }
+        return is;
     }
 }

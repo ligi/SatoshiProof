@@ -1,25 +1,24 @@
 package org.ligi.satoshiproof;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Activity;
 import android.os.Handler;
 import android.provider.MediaStore;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import org.apache.commons.io.FileUtils;
 
+import org.apache.commons.io.FileUtils;
 import org.ligi.axt.listeners.DialogDiscardingOnClickListener;
 import org.ligi.tracedroid.TraceDroid;
 import org.ligi.tracedroid.sending.TraceDroidEmailSender;
 
-import java.io.*;
+import java.io.File;
 
 public class MainActivity extends Activity {
 
@@ -36,7 +35,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         TraceDroid.init(this);
-        TraceDroidEmailSender.sendStackTraces("ligi@ligi.de",this);
+        TraceDroidEmailSender.sendStackTraces("ligi@ligi.de", this);
 
         textView = (TextView) findViewById(R.id.textToProof);
         setupButtons();
@@ -44,16 +43,12 @@ public class MainActivity extends Activity {
     }
 
     private void checkForMaterialToProveFromIntent() {
-        // Get intent, action and MIME type
-        Intent intent = getIntent();
-        String action = intent.getAction();
-        String type = intent.getType();
 
-        if (Intent.ACTION_SEND.equals(action) && type != null) {
-            if ("text/plain".equals(type)) {
-                handleSendText(intent); // Handle text being sent
+        if (Intent.ACTION_SEND.equals(getIntent().getAction()) && getIntent().getType() != null) {
+            if ("text/plain".equals(getIntent().getType())) {
+                handleSendText(getIntent()); // Handle text being sent
             } else {
-                handleSendStream(intent); // Handle single image being sent
+                handleSendStream(getIntent()); // Handle single image being sent
             }
         }
     }
@@ -72,7 +67,7 @@ public class MainActivity extends Activity {
             showProgressDialog();
             final ImageFromIntentUriExtractor imageExtractor = new ImageFromIntentUriExtractor(MainActivity.this);
             File bitmapFile = imageExtractor.extract(imageUri);
-            proofFile(bitmapFile );
+            proofFile(bitmapFile);
 
         }
     }
@@ -89,7 +84,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.pickPictureButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
             }
         });
@@ -116,7 +111,7 @@ public class MainActivity extends Activity {
                         public void run() {
 
                             File bitmapFile = imageExtractor.extract(imageReturnedIntent.getData());
-                            proofFile(bitmapFile );
+                            proofFile(bitmapFile);
 
                         }
                     }).start();
@@ -135,11 +130,11 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 try {
-                    if (file==null) {
+                    if (file == null) {
                         failWitAlertDialog("Could not open file");
                         return;
                     }
-                    byte[] imageBytes = FileUtils.readFileToByteArray(file);
+                    final byte[] imageBytes = FileUtils.readFileToByteArray(file);
                     new ProofAsyncTask(MainActivity.this, imageBytes).execute();
                     progressDialog.dismiss();
                 } catch (Exception e) {

@@ -17,7 +17,7 @@ public class HelpDialogActivity extends Activity {
         super.onCreate(savedInstanceState);
         setTitle("Help");
         setContentView(R.layout.help_dialog);
-        TextView tv = (TextView) findViewById(R.id.helpTextView);
+        final TextView tv = (TextView) findViewById(R.id.helpTextView);
         tv.setMovementMethod(LinkMovementMethod.getInstance());
         tv.setText(Html.fromHtml(getStringFromRaw("help.html")));
     }
