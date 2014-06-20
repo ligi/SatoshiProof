@@ -1,9 +1,9 @@
 buildscript {
     repositories {
-        maven { url 'http://repo1.maven.org/maven2' }
+        mavenCentral()	
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.10.+'
+        classpath 'com.android.tools.build:gradle:0.11.+'
     }
 }
 apply plugin: 'android'
@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile "com.google:bitcoinj:0.11.1@jar"
+    compile "com.google:bitcoinj:0.11.3@jar"
     // the above @jar is important
     // context: http://stackoverflow.com/questions/22730620/bad-apk-when-using-bitcoinj-from-maven-central
 
@@ -28,7 +28,7 @@ dependencies {
 
     compile "com.android.support:support-v4:19.1.0"
 
-    compile 'org.ligi:AXT:0.25'
+    compile 'org.ligi:AXT:0.28'
     compile 'org.ligi:tracedroid:1.1'
 }
 

@@ -10,7 +10,7 @@ import com.google.bitcoin.core.NetworkParameters;
 import com.google.bitcoin.core.Utils;
 import de.schildbach.wallet.integration.android.BitcoinIntegration;
 import org.ligi.axt.AXT;
-import org.ligi.axt.helpers.dialog.DialogDiscardingOnClickListener;
+import org.ligi.axt.listeners.DialogDiscardingOnClickListener;
 
 import java.net.MalformedURLException;
 import java.net.URL;

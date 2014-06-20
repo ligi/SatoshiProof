@@ -14,7 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import org.apache.commons.io.FileUtils;
-import org.ligi.axt.helpers.dialog.DialogDiscardingOnClickListener;
+
+import org.ligi.axt.listeners.DialogDiscardingOnClickListener;
 import org.ligi.tracedroid.TraceDroid;
 import org.ligi.tracedroid.sending.TraceDroidEmailSender;
 
