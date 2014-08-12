@@ -1,6 +1,4 @@
-[![Build Status](https://ligi.ci.cloudbees.com/job/SatoshiProof/badge/icon)](https://ligi.ci.cloudbees.com/job/SatoshiProof/)
-
-[![Android app on Google Play](SatoshiProof/promo/180x120.png)](https://play.google.com/store/apps/details?id=org.ligi.satoshiproof)
+[![Build Status](https://travis-ci.org/ligi/SatoshiProof.svg?branch=master)](https://travis-ci.org/ligi/SatoshiProof)
 
 [![Android app on Google Play](https://developer.android.com/images/brand/en_app_rgb_wo_60.png)](https://play.google.com/store/apps/details?id=org.ligi.satoshiproof)
 
