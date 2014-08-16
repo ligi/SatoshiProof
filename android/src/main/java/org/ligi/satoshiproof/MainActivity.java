@@ -21,25 +21,44 @@ import org.ligi.tracedroid.sending.TraceDroidEmailSender;
 
 import java.io.File;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
+import static android.provider.MediaStore.Images.Media;
+
 public class MainActivity extends Activity {
 
     private static final int ACTIVITY_SELECT_IMAGE = 1;
-    private TextView textView;
-    private Handler handler;
+
     private ProgressDialog progressDialog;
+
+    @InjectView(R.id.textToProof)
+    TextView textView;
+
+    @OnClick(R.id.proofTextButton)
+    void proofTextButtonOnClicl() {
+        new ProofAsyncTask(MainActivity.this, textView.getText().toString().getBytes()).execute();
+    }
+
+
+    @OnClick(R.id.pickPictureButton)
+    void pickPictureButtonOnClick() {
+        final Intent intent = new Intent(Intent.ACTION_PICK, Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, ACTIVITY_SELECT_IMAGE);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        handler = new Handler();
         setContentView(R.layout.activity_main);
+
+        ButterKnife.inject(this);
 
         TraceDroid.init(this);
         TraceDroidEmailSender.sendStackTraces("ligi@ligi.de", this);
 
-        textView = (TextView) findViewById(R.id.textToProof);
-        setupButtons();
         checkForMaterialToProveFromIntent();
     }
 
@@ -55,7 +74,7 @@ public class MainActivity extends Activity {
     }
 
     void handleSendText(Intent intent) {
-        String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+        final String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
         if (sharedText != null) {
             showProgressDialog();
             new ProofAsyncTask(MainActivity.this, sharedText.getBytes()).execute();
@@ -63,32 +82,13 @@ public class MainActivity extends Activity {
     }
 
     void handleSendStream(Intent intent) {
-        Uri imageUri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
+        final Uri imageUri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
         if (imageUri != null) {
             showProgressDialog();
             final ImageFromIntentUriExtractor imageExtractor = new ImageFromIntentUriExtractor(MainActivity.this);
-            File bitmapFile = imageExtractor.extract(imageUri);
+            final File bitmapFile = imageExtractor.extract(imageUri);
             proofFile(bitmapFile);
-
         }
-    }
-
-
-    private void setupButtons() {
-        findViewById(R.id.proofTextButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new ProofAsyncTask(MainActivity.this, textView.getText().toString().getBytes()).execute();
-            }
-        });
-
-        findViewById(R.id.pickPictureButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
-            }
-        });
     }
 
     @Override
@@ -127,7 +127,7 @@ public class MainActivity extends Activity {
     }
 
     private void proofFile(final File file) {
-        handler.post(new Runnable() {
+        runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -143,7 +143,6 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
     }
 
     private void failWitAlertDialog(String msg) {
