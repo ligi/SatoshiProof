@@ -96,7 +96,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
             alertBuilder.setNeutralButton("Add Proof", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    BitcoinIntegration.request(activity, address.toString(), 1);
+                    BitcoinIntegration.request(activity, address.toString(), 5430);
                 }
             });
 
