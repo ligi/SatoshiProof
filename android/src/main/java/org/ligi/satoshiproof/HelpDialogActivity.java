@@ -7,6 +7,8 @@ import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.widget.TextView;
 
+import org.ligi.axt.AXT;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -19,24 +21,16 @@ public class HelpDialogActivity extends Activity {
         setContentView(R.layout.help_dialog);
         final TextView tv = (TextView) findViewById(R.id.helpTextView);
         tv.setMovementMethod(LinkMovementMethod.getInstance());
-        tv.setText(Html.fromHtml(getStringFromRaw("help.html")));
-    }
 
-
-    private String getStringFromRaw(String path) {
-
-        String xmlString = null;
         try {
-            InputStream is = getResources().openRawResource(R.raw.help);
-            int length = is.available();
-            byte[] data = new byte[length];
-            is.read(data);
-            xmlString = new String(data);
-        } catch (IOException e1) {
-            e1.printStackTrace();
+            final InputStream helpInputStream = getResources().openRawResource(R.raw.help);
+            final String helpString = AXT.at(helpInputStream).readToString();
+            tv.setText(Html.fromHtml(helpString));
+        } catch (IOException e) {
+            finish();
         }
 
-        return xmlString;
     }
+
 }
 

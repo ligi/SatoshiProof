@@ -78,22 +78,23 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
             });
 
         } else {
-            final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
-            Date date = null;
-            try {
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-                date = dateFormat.parse(firstSeenDateString);
-            } catch (ParseException e) {
-            }
-
-            String dateString = firstSeenDateString + " UTC";
-            if (date != null) {
-                dateString = date.toString();
-            }
-
+            final String dateString = getString(firstSeenDateString);
             alertBuilder.setMessage("The existence of this was proven on:" + dateString);
         }
         alertBuilder.show();
         super.onPostExecute(firstSeenDateString);
+    }
+
+    private String getString(String firstSeenDateString) {
+
+        try {
+            final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+            dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+            final Date date = dateFormat.parse(firstSeenDateString);
+            return date.toString();
+        } catch (ParseException e) {
+        }
+
+        return firstSeenDateString + " UTC";
     }
 }

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.apache.commons.io.FileUtils;
+import org.ligi.axt.AXT;
 import org.ligi.axt.listeners.DialogDiscardingOnClickListener;
 import org.ligi.tracedroid.TraceDroid;
 import org.ligi.tracedroid.sending.TraceDroidEmailSender;
@@ -148,20 +149,18 @@ public class MainActivity extends Activity {
     private void failWitAlertDialog(String msg) {
         progressDialog.dismiss();
         new AlertDialog.Builder(this).setMessage(msg)
-                .setPositiveButton("OK", new DialogDiscardingOnClickListener()).show();
+                .setPositiveButton(android.R.string.ok, new DialogDiscardingOnClickListener()).show();
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_help:
-                Intent helpIntent = new Intent(this, HelpDialogActivity.class);
-                startActivity(helpIntent);
-                break;
+                AXT.at(this).startCommonIntent().activityFromClass(HelpDialogActivity.class);
+                return true;
             case R.id.action_hash:
-                Intent hashIntent = new Intent(this, LastHashActivity.class);
-                startActivity(hashIntent);
-                break;
+                AXT.at(this).startCommonIntent().activityFromClass(LastHashActivity.class);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
