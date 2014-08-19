@@ -28,7 +28,7 @@ dependencies {
     compile 'com.googlecode.android-query:android-query:0.25.9'
     compile 'com.android.support:support-v4:20.0.0'
     compile 'com.jakewharton:butterknife:5.1.1'
-    compile 'org.ligi:AXT:0.28'
+    compile 'org.ligi:AXT:0.29'
     compile 'org.ligi:tracedroid:1.2'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
 }
