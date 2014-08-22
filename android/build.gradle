@@ -39,13 +39,10 @@ android {
 
     defaultConfig {
         minSdkVersion 7
-        targetSdkVersion 19
+        targetSdkVersion 20
 
         versionName '0.7'
         versionCode 7
     }
 
-    lintOptions {
-        disable 'HardcodedText'
-    }
 }
