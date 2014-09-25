@@ -27,7 +27,7 @@ dependencies {
     compile 'com.google.guava:guava:18.0'
     compile 'com.googlecode.android-query:android-query:0.25.9'
     compile 'com.android.support:support-v4:20.0.0'
-    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.jakewharton:butterknife:5.1.2'
     compile 'org.ligi:AXT:0.31'
     compile 'org.ligi:tracedroid:1.4'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
