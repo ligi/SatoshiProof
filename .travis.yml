@@ -7,7 +7,7 @@ android:
 jdk: oraclejdk7
 
 script:
-  gradle clean build
+  ./gradlew clean build
 
 notifications:
   email: true
