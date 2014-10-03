@@ -1,8 +1,6 @@
 .gradle/
-gradle/
 .idea/
 android/build/
-gradlew
 gradlew.bat
 *.iml
 local.properties
