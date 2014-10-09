@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
     TextView textView;
 
     @OnClick(R.id.proofTextButton)
-    void proofTextButtonOnClicl() {
+    void proofTextButtonOnClick() {
         new ProofAsyncTask(MainActivity.this, textView.getText().toString().getBytes()).execute();
     }
 
