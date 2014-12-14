@@ -41,8 +41,8 @@ android {
         minSdkVersion 7
         targetSdkVersion 21
 
-        versionName '0.7'
-        versionCode 7
+        versionName '1.0.0'
+        versionCode 100
     }
 
 }
