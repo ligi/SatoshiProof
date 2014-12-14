@@ -20,6 +20,6 @@
     </style>
 
     <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    <style name="AppThemeDialog" parent="android:Theme.Dialog"></style>
+    <style name="AppThemeDialog" parent="android:Theme.Dialog"/>
 
 </resources>
