@@ -1,8 +1,11 @@
 language: android
 android:
  components:
-    - build-tools-20
-    - android-20
+    - build-tools-21.1.2
+    - android-21
+    - sysimg-21
+    - add-on
+    - extra
 
 jdk: oraclejdk7
 
