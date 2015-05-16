@@ -12,14 +12,14 @@ dependencies {
     // context: http://stackoverflow.com/questions/22730620/bad-apk-when-using-bitcoinj-from-maven-central
     compile 'com.madgag:sc-light-jdk15on:1.47.0.3'
     compile 'org.apache.commons:commons-io:1.3.2'
-    compile 'org.slf4j:slf4j-api:1.7.10'
+    compile 'org.slf4j:slf4j-api:1.7.12'
     compile 'com.google.guava:guava:18.0'
     compile 'com.googlecode.android-query:android-query:0.25.9'
     compile 'com.android.support:support-v4:22.0.0'
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'org.ligi:AXT:0.31'
     compile 'org.ligi:tracedroid:1.4'
-    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.squareup.okhttp:okhttp:2.3.0'
 }
 
 android {
