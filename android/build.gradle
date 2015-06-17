@@ -19,7 +19,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'org.ligi:AXT:0.31'
     compile 'org.ligi:tracedroid:1.4'
-    compile 'com.squareup.okhttp:okhttp:2.3.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
 }
 
 android {
