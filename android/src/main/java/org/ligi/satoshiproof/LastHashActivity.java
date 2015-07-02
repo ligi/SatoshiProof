@@ -29,13 +29,8 @@ public class LastHashActivity extends AppCompatActivity {
         setContentView(R.layout.last_hash);
         aQuery = new AQuery(this);
         new FetchLastHashAsyncTask().execute();
-        setDisplayHomeAsUpEnabledIfPossible();
-    }
-
-    @TargetApi(11)
-    private void setDisplayHomeAsUpEnabledIfPossible() {
-        if (Build.VERSION.SDK_INT >= 11 && getActionBar() != null) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 
