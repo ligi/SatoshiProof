@@ -3,12 +3,12 @@
     <item android:id="@+id/action_help"
           android:title="@string/action_help"
           android:orderInCategory="100"
-          android:icon="@android:drawable/ic_menu_help"
+          android:icon="@drawable/ic_action_help"
           app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/action_hash"
           android:title="last hash"
           android:orderInCategory="200"
-          android:icon="@android:drawable/ic_menu_agenda"
+          android:icon="@drawable/ic_action_barcode"
           app:showAsAction="ifRoom"/>
 </menu>
