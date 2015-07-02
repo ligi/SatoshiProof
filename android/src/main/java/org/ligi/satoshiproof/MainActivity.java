@@ -1,31 +1,23 @@
 package org.ligi.satoshiproof;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
-
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import java.io.File;
 import org.apache.commons.io.FileUtils;
 import org.ligi.axt.AXT;
 import org.ligi.axt.listeners.DialogDiscardingOnClickListener;
 import org.ligi.tracedroid.TraceDroid;
 import org.ligi.tracedroid.sending.TraceDroidEmailSender;
-
-import java.io.File;
-
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.OnClick;
-
 import static android.provider.MediaStore.Images.Media;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    @InjectView(R.id.textToProof)
+    @Bind(R.id.textToProof)
     TextView textView;
 
     @OnClick(R.id.proofTextButton)
@@ -55,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         TraceDroid.init(this);
         TraceDroidEmailSender.sendStackTraces("ligi@ligi.de", this);
@@ -98,8 +90,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    protected void onActivityResult(int requestCode, int resultCode,
-                                    final Intent imageReturnedIntent) {
+    protected void onActivityResult(int requestCode, int resultCode, final Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
         switch (requestCode) {
@@ -148,8 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void failWitAlertDialog(String msg) {
         progressDialog.dismiss();
-        new AlertDialog.Builder(this).setMessage(msg)
-                .setPositiveButton(android.R.string.ok, new DialogDiscardingOnClickListener()).show();
+        new AlertDialog.Builder(this).setMessage(msg).setPositiveButton(android.R.string.ok, new DialogDiscardingOnClickListener()).show();
     }
 
     @Override
