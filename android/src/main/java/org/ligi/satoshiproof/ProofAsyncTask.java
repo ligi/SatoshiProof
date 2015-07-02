@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-class ProofAsyncTask extends AsyncTask<Void, String, String> {
+public class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
     private Address address;
     private final byte[] data;
@@ -36,7 +36,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        progressDialog.setMessage("Checking this text");
+        progressDialog.setMessage("Checking existence in blockchain");
         progressDialog.show();
     }
 
