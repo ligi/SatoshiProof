@@ -5,23 +5,20 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.Utils;
 import com.google.bitcoin.params.MainNetParams;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-
-import org.ligi.axt.listeners.DialogDiscardingOnClickListener;
-
+import de.schildbach.wallet.integration.android.BitcoinIntegration;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import de.schildbach.wallet.integration.android.BitcoinIntegration;
 
 class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
@@ -50,7 +47,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
     }
 
     @Override
-    protected String doInBackground(Void... voids) {
+    protected String doInBackground(@NonNull Void... voids) {
         address = new Address(MainNetParams.get(), Utils.sha256hash160(data));
         publishProgress("searching for Address: " + address.toString());
 
@@ -58,9 +55,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
             final OkHttpClient client = new OkHttpClient();
 
-            final Request request = new Request.Builder()
-                    .url("http://blockexplorer.com/q/addressfirstseen/" + address.toString())
-                    .build();
+            final Request request = new Request.Builder().url("http://blockexplorer.com/q/addressfirstseen/" + address.toString()).build();
 
             final Response response = client.newCall(request).execute();
             return response.body().string();
@@ -73,7 +68,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
     }
 
     @Override
-    protected void onPostExecute(String firstSeenDateString) {
+    protected void onPostExecute(@Nullable String firstSeenDateString) {
 
         if (activity.isFinishing()) {
             return;
@@ -81,16 +76,15 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
         progressDialog.dismiss();
 
-        if(firstSeenDateString==null) {
-            new AlertDialog.Builder(activity)
-                    .setMessage("there where network problems - please try again later")
-                    .setPositiveButton(android.R.string.ok,null)
-                    .show();
+        if (firstSeenDateString == null) {
+            new AlertDialog.Builder(activity).setMessage("there where network problems - please try again later")
+                                             .setPositiveButton(android.R.string.ok, null)
+                                             .show();
             return;
         }
 
         final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(activity);
-        alertBuilder.setPositiveButton("OK", new DialogDiscardingOnClickListener());
+        alertBuilder.setPositiveButton(android.R.string.ok, null);
         if (firstSeenDateString.toLowerCase(Locale.getDefault()).startsWith("never seen")) {
             alertBuilder.setMessage("The existence of this is not proven yet.");
             alertBuilder.setNeutralButton("Add Proof", new DialogInterface.OnClickListener() {
@@ -115,7 +109,7 @@ class ProofAsyncTask extends AsyncTask<Void, String, String> {
             dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
             final Date date = dateFormat.parse(firstSeenDateString);
             return date.toString();
-        } catch (ParseException e) {
+        } catch (ParseException ignored) {
         }
 
         return firstSeenDateString + " UTC";
