@@ -37,6 +37,6 @@ android {
     }
 
     lintOptions {
-        disable 'InvalidPackage'
+        warning 'InvalidPackage'
     }
 }
