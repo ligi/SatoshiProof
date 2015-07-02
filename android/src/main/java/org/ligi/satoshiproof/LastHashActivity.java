@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import com.androidquery.AQuery;
 import java.net.MalformedURLException;
@@ -17,7 +18,7 @@ import org.json.JSONObject;
 import org.ligi.axt.AXT;
 import org.ligi.axt.listeners.ActivityFinishingOnClickListener;
 
-public class LastHashActivity extends Activity {
+public class LastHashActivity extends AppCompatActivity {
 
     private AQuery aQuery;
 

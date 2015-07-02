@@ -1,18 +1,15 @@
 package org.ligi.satoshiproof;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.widget.TextView;
-
-import org.ligi.axt.AXT;
-
 import java.io.IOException;
 import java.io.InputStream;
+import org.ligi.axt.AXT;
 
-public class HelpDialogActivity extends Activity {
+public class HelpDialogActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
