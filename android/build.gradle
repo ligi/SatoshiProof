@@ -22,6 +22,8 @@ dependencies {
     compile 'org.ligi:AXT:0.31'
     compile 'org.ligi:tracedroid:1.4'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
+
+     compile 'com.android.support:design:22.2.0'
 }
 
 android {
