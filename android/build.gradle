@@ -23,7 +23,7 @@ dependencies {
     compile 'org.ligi:tracedroid:1.4'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
 
-     compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:design:22.2.0'
 }
 
 android {
@@ -34,8 +34,8 @@ android {
         minSdkVersion 7
         targetSdkVersion 22
 
-        versionName '1.0.1'
-        versionCode 101
+        versionName '1.0.2'
+        versionCode 102
 
         archivesBaseName = "SatoshiProof-$versionName"
     }
