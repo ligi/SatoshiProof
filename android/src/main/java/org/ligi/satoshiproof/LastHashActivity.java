@@ -1,10 +1,7 @@
 package org.ligi.satoshiproof;
 
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -52,8 +49,11 @@ public class LastHashActivity extends AppCompatActivity {
             try {
                 final URL url = new URL("https://api.biteasy.com/blockchain/v1/blocks?per_page=1");
                 final String s = AXT.at(url).downloadToString();
-                final JSONObject jsonObject = new JSONObject(s);
-                return jsonObject.getJSONObject("data").getJSONArray("blocks").getJSONObject(0).getString("hash");
+                if (s != null) {
+                    final JSONObject jsonObject = new JSONObject(s);
+                    return jsonObject.getJSONObject("data").getJSONArray("blocks").getJSONObject(0).getString("hash");
+                }
+
             } catch (MalformedURLException | JSONException ignored) {
             }
 
