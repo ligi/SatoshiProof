@@ -14,11 +14,8 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import de.schildbach.wallet.integration.android.BitcoinIntegration;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
 
 public class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
@@ -55,11 +52,10 @@ public class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
             final OkHttpClient client = new OkHttpClient();
 
-            final Request request = new Request.Builder().url("http://blockexplorer.com/q/addressfirstseen/" + address.toString()).build();
+            final Request request = new Request.Builder().url("https://blockchain.info/de/q/addressfirstseen/" + address.toString()).build();
 
             final Response response = client.newCall(request).execute();
             return response.body().string();
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,7 +64,7 @@ public class ProofAsyncTask extends AsyncTask<Void, String, String> {
     }
 
     @Override
-    protected void onPostExecute(@Nullable String firstSeenDateString) {
+    protected void onPostExecute(@Nullable final String firstSeenDateString) {
 
         if (activity.isFinishing()) {
             return;
@@ -76,16 +72,21 @@ public class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
         progressDialog.dismiss();
 
-        if (firstSeenDateString == null) {
-            new AlertDialog.Builder(activity).setMessage("there where network problems - please try again later")
-                                             .setPositiveButton(android.R.string.ok, null)
-                                             .show();
+        final Long firstSeenLong = safelyToLong(firstSeenDateString);
+
+        if (firstSeenLong == null) {
+            String message = "there where network problems - please try again later";
+            if (firstSeenDateString != null) {
+                message += firstSeenDateString;
+            }
+
+            new AlertDialog.Builder(activity).setMessage(message).setPositiveButton(android.R.string.ok, null).show();
             return;
         }
 
         final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(activity);
         alertBuilder.setPositiveButton(android.R.string.ok, null);
-        if (firstSeenDateString.toLowerCase(Locale.getDefault()).startsWith("never seen")) {
+        if (firstSeenLong == 0) {
             alertBuilder.setMessage("The existence of this is not proven yet.");
             alertBuilder.setNeutralButton("Add Proof", new DialogInterface.OnClickListener() {
                 @Override
@@ -95,23 +96,19 @@ public class ProofAsyncTask extends AsyncTask<Void, String, String> {
             });
 
         } else {
-            final String dateString = getString(firstSeenDateString);
+            final String dateString = DateFormat.getDateTimeInstance().format(new Date(firstSeenLong * 1000));
             alertBuilder.setMessage("The existence of this was proven on:" + dateString);
         }
         alertBuilder.show();
         super.onPostExecute(firstSeenDateString);
     }
 
-    private String getString(String firstSeenDateString) {
-
+    private static Long safelyToLong(final @Nullable String firstSeenDateString) {
         try {
-            final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
-            dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-            final Date date = dateFormat.parse(firstSeenDateString);
-            return date.toString();
-        } catch (ParseException ignored) {
+            return Long.parseLong(firstSeenDateString);
+        } catch (NumberFormatException e) {
+            return null;
         }
-
-        return firstSeenDateString + " UTC";
     }
+
 }
