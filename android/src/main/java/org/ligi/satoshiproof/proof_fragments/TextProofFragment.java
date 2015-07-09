@@ -20,9 +20,13 @@ public class TextProofFragment extends Fragment implements ProofFragment {
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_text, container, false);
+        return inflater.inflate(R.layout.fragment_text, container, false);
+    }
+
+    @Override
+    public void onViewCreated(final View view, @Nullable final Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-        return view;
     }
 
     @Override

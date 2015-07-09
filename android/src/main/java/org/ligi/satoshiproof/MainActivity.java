@@ -14,8 +14,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 import org.ligi.axt.AXT;
 import org.ligi.satoshiproof.proof_fragments.ImageProofFragment;
 import org.ligi.satoshiproof.proof_fragments.ProofFragment;
@@ -31,16 +29,11 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.viewPager)
     ViewPager viewPager;
 
-
     @OnClick(R.id.proofFAB)
     void proofFABClick() {
-        proofFragments.get(viewPager.getCurrentItem()).proof();
+        final ProofFragment page =(ProofFragment) viewPager.getAdapter().instantiateItem(viewPager, viewPager.getCurrentItem());
+        page.proof();
     }
-
-    private List<ProofFragment> proofFragments = new ArrayList<ProofFragment>() {{
-        add(new TextProofFragment());
-        add(new ImageProofFragment());
-    }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,22 +43,29 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        final FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(final int position) {
-                return (Fragment) proofFragments.get(position);
+                switch (position) {
+                    case 0:
+                        return new TextProofFragment();
+                    default:
+                        return new ImageProofFragment();
+                }
             }
 
             @Override
             public int getCount() {
-                return proofFragments.size();
+                return 2;
             }
 
             @Override
             public CharSequence getPageTitle(final int position) {
-                return proofFragments.get(position).getTitle();
+                return ((ProofFragment) getItem(position)).getTitle();
             }
-        });
+        };
+
+        viewPager.setAdapter(fragmentPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
 
