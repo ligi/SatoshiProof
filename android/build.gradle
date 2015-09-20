@@ -13,22 +13,21 @@ dependencies {
     compile 'com.madgag:sc-light-jdk15on:1.47.0.3'
     compile 'org.apache.commons:commons-io:1.3.2'
     compile 'org.slf4j:slf4j-api:1.7.12'
-    compile 'com.google.guava:guava:18.0'
     compile 'com.googlecode.android-query:android-query:0.25.9'
-    compile 'com.android.support:support-v4:22.2.0'
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.0.1'
 
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'org.ligi:AXT:0.31'
     compile 'org.ligi:tracedroid:1.4'
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
 
-    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:design:23.0.1'
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
 
     defaultConfig {
         minSdkVersion 7
@@ -38,6 +37,22 @@ android {
         versionCode 103
 
         archivesBaseName = "SatoshiProof-$versionName"
+    }
+
+    flavorDimensions "chain"
+
+    productFlavors {
+
+        onBitcoin {
+            dimension "chain"
+            applicationId = "org.ligi.satoshiproof"
+        }
+
+        onEthereum {
+            // this is only a stub at the moment
+            dimension "chain"
+            applicationId = "org.ligi.etherproof"
+        }
     }
 
     lintOptions {
