@@ -14,20 +14,19 @@ dependencies {
     compile 'org.apache.commons:commons-io:1.3.2'
     compile 'org.slf4j:slf4j-api:1.7.13'
     compile 'com.googlecode.android-query:android-query:0.25.9'
-    compile 'com.android.support:support-v4:23.1.1'
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
 
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'org.ligi:AXT:0.31'
     compile 'org.ligi:tracedroid:1.4'
     compile 'com.squareup.okhttp:okhttp:2.7.0'
-
-    compile 'com.android.support:design:23.1.1'
 }
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.2'
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         minSdkVersion 7
