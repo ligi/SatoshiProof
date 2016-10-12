@@ -7,19 +7,17 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import com.google.bitcoin.core.Address;
-import com.google.bitcoin.core.Utils;
-import com.google.bitcoin.params.MainNetParams;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import de.schildbach.wallet.integration.android.BitcoinIntegration;
 import java.text.DateFormat;
 import java.util.Date;
+import static org.ligi.satoshiproof.util.AddressGenerator.dataToAddressString;
 
 public class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
-    private Address address;
+    private String addressString;
     private final byte[] data;
     private final Activity activity;
     private final ProgressDialog progressDialog;
@@ -45,14 +43,14 @@ public class ProofAsyncTask extends AsyncTask<Void, String, String> {
 
     @Override
     protected String doInBackground(@NonNull Void... voids) {
-        address = new Address(MainNetParams.get(), Utils.sha256hash160(data));
-        publishProgress("searching for Address: " + address.toString());
+        addressString = dataToAddressString(data);
+        publishProgress("searching for Address: " + addressString);
 
         try {
 
             final OkHttpClient client = new OkHttpClient();
 
-            final Request request = new Request.Builder().url("https://blockchain.info/de/q/addressfirstseen/" + address.toString()).build();
+            final Request request = new Request.Builder().url("https://blockchain.info/de/q/addressfirstseen/" + addressString).build();
 
             final Response response = client.newCall(request).execute();
             return response.body().string();
@@ -91,7 +89,7 @@ public class ProofAsyncTask extends AsyncTask<Void, String, String> {
             alertBuilder.setNeutralButton("Add Proof", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    BitcoinIntegration.request(activity, address.toString(), 5460);
+                    BitcoinIntegration.request(activity, addressString, 5460);
                 }
             });
 
