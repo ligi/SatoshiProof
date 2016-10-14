@@ -5,9 +5,8 @@ import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.os.AsyncTask
 import de.schildbach.wallet.integration.android.BitcoinIntegration
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import org.ligi.satoshiproof.util.AddressGenerator.dataToAddressString
+import org.ligi.satoshiproof.util.Downloader.downloadURL
 import java.text.DateFormat
 import java.util.*
 
@@ -29,22 +28,8 @@ class ProofAsyncTask(private val activity: Activity, private val data: ByteArray
 
     override fun doInBackground(vararg voids: Void): String? {
         addressString = dataToAddressString(data)
-        publishProgress("searching for Address: " + addressString!!)
-
-        try {
-
-            val client = OkHttpClient()
-
-            val request = Request.Builder().url("https://blockchain.info/de/q/addressfirstseen/" + addressString!!).build()
-
-            val response = client.newCall(request).execute()
-            return response.body().string()
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        return null
+        publishProgress("searching for Address: " + addressString)
+        return downloadURL("https://blockchain.info/de/q/addressfirstseen/$addressString")
     }
 
     override fun onPostExecute(firstSeenDateString: String?) {
@@ -71,7 +56,7 @@ class ProofAsyncTask(private val activity: Activity, private val data: ByteArray
         alertBuilder.setPositiveButton(android.R.string.ok, null)
         if (firstSeenLong == 0L) {
             alertBuilder.setMessage("The existence of this is not proven yet.")
-            alertBuilder.setNeutralButton("Add Proof") { dialogInterface, i -> BitcoinIntegration.request(activity, addressString, 5460) }
+            alertBuilder.setNeutralButton("Add Proof") { dialogInterface, i -> BitcoinIntegration.request(activity, addressString!!, 5460) }
 
         } else {
             val dateString = DateFormat.getDateTimeInstance().format(Date(firstSeenLong * 1000))

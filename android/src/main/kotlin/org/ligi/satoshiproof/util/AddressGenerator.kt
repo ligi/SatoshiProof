@@ -26,7 +26,6 @@ object AddressGenerator {
         } catch (e: NoSuchAlgorithmException) {
             throw RuntimeException(e)  // Cannot happen.
         }
-
     }
 
     private fun doubleDigest(input: ByteArray, offset: Int, length: Int, digest: MessageDigest): ByteArray {
@@ -34,6 +33,5 @@ object AddressGenerator {
         digest.update(input, offset, length)
         val first = digest.digest()
         return digest.digest(first)
-
     }
 }

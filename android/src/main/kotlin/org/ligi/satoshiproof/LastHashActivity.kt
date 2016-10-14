@@ -1,6 +1,7 @@
 package org.ligi.satoshiproof
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -8,10 +9,8 @@ import android.view.MenuItem
 import com.androidquery.AQuery
 import org.json.JSONException
 import org.json.JSONObject
-import org.ligi.axt.AXT
-import org.ligi.axt.listeners.ActivityFinishingOnClickListener
+import org.ligi.satoshiproof.util.Downloader.downloadURL
 import java.net.MalformedURLException
-import java.net.URL
 
 class LastHashActivity : AppCompatActivity() {
 
@@ -40,8 +39,7 @@ class LastHashActivity : AppCompatActivity() {
 
         override fun doInBackground(vararg voids: Void): String? {
             try {
-                val url = URL("https://api.biteasy.com/blockchain/v1/blocks?per_page=1")
-                val s = AXT.at(url).downloadToString()
+                val s = downloadURL("https://api.biteasy.com/blockchain/v1/blocks?per_page=1")
                 if (s != null) {
                     val jsonObject = JSONObject(s)
                     return jsonObject.getJSONObject("data").getJSONArray("blocks").getJSONObject(0).getString("hash")
@@ -53,8 +51,7 @@ class LastHashActivity : AppCompatActivity() {
 
             try {
                 // fallback - was not working recently but might come back and then be a fallback
-                val url = URL("https://blockexplorer.com/q/latesthash")
-                return AXT.at(url).downloadToString()
+                return downloadURL("https://blockexplorer.com/q/latesthash")
             } catch (ignored: Exception) {
 
             }
@@ -65,7 +62,7 @@ class LastHashActivity : AppCompatActivity() {
         override fun onPostExecute(s: String?) {
             if (s == null) {
                 AlertDialog.Builder(this@LastHashActivity).setMessage("Could not connect to network - please try again later.").setPositiveButton(android.R.string.ok,
-                        ActivityFinishingOnClickListener(this@LastHashActivity)).show()
+                        { dialogInterface: DialogInterface, i: Int ->  this@LastHashActivity.finish() }).show()
                 return
             }
             val url = "http://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=" + s.replace("\n", "")
