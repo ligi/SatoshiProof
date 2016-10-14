@@ -11,7 +11,7 @@ class HelpDialogActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = "Help"
+        title = getString(R.string.help_title)
         setContentView(R.layout.help_dialog)
         helpTextView.movementMethod = LinkMovementMethod.getInstance()
 
