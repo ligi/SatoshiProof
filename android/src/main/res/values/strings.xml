@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name" >Satoshi Proof</string>
     <string name="action_help" >Help</string>
+    <string name="help_title" >Help</string>
 </resources>

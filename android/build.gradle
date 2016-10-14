@@ -109,6 +109,13 @@ android {
         exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
         exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
     }
+    // ugly but the best workaround I found for getting the permission for spoon screenshot writing to SD -Card
+    // http://stackoverflow.com/questions/25276537/how-do-i-change-android-permission - settings - when - running - tests
+    sourceSets {
+        debug {
+            manifest.srcFile 'src/androidTest/AndroidManifest.xml'
+        }
+    }
 
 }
 
