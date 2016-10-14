@@ -15,13 +15,11 @@ dependencies {
     compile "com.google.dagger:dagger:$dagger_version"
     compile 'com.madgag:sc-light-jdk15on:1.47.0.3'
     compile 'org.apache.commons:commons-io:1.3.2'
-    compile 'org.slf4j:slf4j-api:1.7.13'
     compile 'com.googlecode.android-query:android-query:0.25.9'
     compile "com.android.support:support-v4:$support_version"
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:design:$support_version"
 
-    compile 'com.jakewharton:butterknife:7.0.1'
     compile 'org.ligi:AXT:0.31'
     compile 'org.ligi:tracedroid:1.4'
     compile 'com.squareup.okhttp:okhttp:2.7.0'
