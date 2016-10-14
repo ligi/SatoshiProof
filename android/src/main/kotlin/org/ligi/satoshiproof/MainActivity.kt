@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_help -> {
-                startActivity(Intent(this,HelpDialogActivity::class.java))
+                HelpDialog.show(this)
                 return true
             }
             R.id.action_hash -> {
