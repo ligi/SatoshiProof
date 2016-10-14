@@ -7,12 +7,12 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 import de.schildbach.wallet.integration.android.BitcoinIntegration;
 import java.text.DateFormat;
 import java.util.Date;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import static org.ligi.satoshiproof.util.AddressGenerator.dataToAddressString;
 
 public class ProofAsyncTask extends AsyncTask<Void, String, String> {

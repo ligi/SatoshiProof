@@ -22,7 +22,7 @@ dependencies {
 
     compile 'org.ligi:AXT:0.31'
     compile 'org.ligi:tracedroid:1.4'
-    compile 'com.squareup.okhttp:okhttp:2.7.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-runtime:$kotlin_version"
