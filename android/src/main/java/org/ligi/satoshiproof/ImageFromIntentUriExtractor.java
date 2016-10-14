@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class ImageFromIntentUriExtractor {
 
-    final Context context;
+    private final Context context;
 
     public ImageFromIntentUriExtractor(Context context) {
         this.context = context;
