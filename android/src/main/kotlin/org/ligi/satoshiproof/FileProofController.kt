@@ -3,7 +3,6 @@ package org.ligi.satoshiproof
 import android.app.Activity
 import android.support.v7.app.AlertDialog
 import org.apache.commons.io.FileUtils
-import org.ligi.axt.listeners.DialogDiscardingOnClickListener
 import java.io.File
 
 class FileProofController(private val context: Activity) {
@@ -25,7 +24,7 @@ class FileProofController(private val context: Activity) {
     }
 
     private fun failWitAlertDialog(msg: String) {
-        AlertDialog.Builder(context).setMessage(msg).setPositiveButton(android.R.string.ok, DialogDiscardingOnClickListener()).show()
+        AlertDialog.Builder(context).setMessage(msg).setPositiveButton(android.R.string.ok, null).show()
     }
 
 }

@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Html
 import android.text.method.LinkMovementMethod
 import kotlinx.android.synthetic.main.help_dialog.*
-import org.ligi.axt.AXT
 import java.io.IOException
 
 class HelpDialogActivity : AppCompatActivity() {
@@ -18,7 +17,7 @@ class HelpDialogActivity : AppCompatActivity() {
 
         try {
             val helpInputStream = resources.openRawResource(R.raw.help)
-            val helpString = AXT.at(helpInputStream).readToString()
+            val helpString = helpInputStream.reader().readText()
             helpTextView.text = Html.fromHtml(helpString)
         } catch (e: IOException) {
             finish()

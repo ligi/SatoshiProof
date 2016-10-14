@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
-import org.ligi.axt.AXT
 import org.ligi.satoshiproof.proof_fragments.ImageProofFragment
 import org.ligi.satoshiproof.proof_fragments.ProofFragment
 import org.ligi.satoshiproof.proof_fragments.TextProofFragment
@@ -90,11 +89,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_help -> {
-                AXT.at(this).startCommonIntent().activityFromClass(HelpDialogActivity::class.java)
+                startActivity(Intent(this,HelpDialogActivity::class.java))
                 return true
             }
             R.id.action_hash -> {
-                AXT.at(this).startCommonIntent().activityFromClass(LastHashActivity::class.java)
+                startActivity(Intent(this,LastHashActivity::class.java))
                 return true
             }
         }
