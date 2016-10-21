@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        support_version = '24.2.1'
+        support_version = '25.0.0'
         dagger_version = '2.7'
         kotlin_version = '1.0.4'
     }
@@ -9,7 +9,7 @@ buildscript {
         maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.android.tools.build:gradle:2.2.2'
 
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'de.mobilej.unmock:UnMockPlugin:0.5.0'
