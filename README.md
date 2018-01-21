@@ -1,5 +1,3 @@
-[![Build Status](https://snap-ci.com/ligi/SatoshiProof/branch/master/build_image)](https://snap-ci.com/ligi/SatoshiProof/branch/master)
-
 [![Android app on Google Play](http://ligi.de/img/play_badge.png)](https://play.google.com/store/apps/details?id=org.ligi.satoshiproof)
 [![Android app on FDroid](http://ligi.de/img/fdroid_badge.png)](https://f-droid.org/repository/browse/?fdid=org.ligi.satoshiproof)
 
