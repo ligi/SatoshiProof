@@ -18,7 +18,7 @@ there is a <a href="https://plus.google.com/communities/116290978952142109862">G
 This app is licensed <a href="http://gplv3.fsf.org/">GPLv3</a> - you can find the <a href="https://github.com/ligi/SatoshiProof">sourcecode on github</a>.
 <h1>Credits</h1>
 <p>
-  - <a href="https://github.com/vog">Volker Grabsch</a> for presenting <a href="http://vog.github.io/bitcoinproof">his idea Bitcoinproof</a> at Hack&Tell and inspiring this app this way!
+  - <a href="https://github.com/vog">Volker Grabsch</a> for presenting <a href="http://vog.github.io/bitcoinproof">his idea Bitcoinproof</a> at [Hack&Tell](http://berlinhackandtell.rocks) and inspiring this app this way!
 </p>
 <p>
   - The Tango Project <a href="http://openclipart.org/detail/36067/tango-application-certificate-by-warszawianka"> for the icon</a>
