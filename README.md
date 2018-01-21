@@ -15,23 +15,14 @@ The money is going nowhere ( or to a random stranger ) - but it is so little tha
 there is a <a href="https://plus.google.com/communities/116290978952142109862">Google+ Community</a>
 
 <h1>License</h1>
+
 This app is licensed <a href="http://gplv3.fsf.org/">GPLv3</a> - you can find the <a href="https://github.com/ligi/SatoshiProof">sourcecode on github</a>.
+
 <h1>Credits</h1>
-<p>
-  - <a href="https://github.com/vog">Volker Grabsch</a> for presenting <a href="http://vog.github.io/bitcoinproof">his idea Bitcoinproof</a> at [Hack&Tell](http://berlinhackandtell.rocks) and inspiring this app this way!
-</p>
-<p>
-  - The Tango Project <a href="http://openclipart.org/detail/36067/tango-application-certificate-by-warszawianka"> for the icon</a>
-</p>
-<p>
-  - <a href="https://plus.google.com/114712911621260660401">Andreas Schildbach</a> for <a href="https://play.google.com/store/apps/details?id=de.schildbach.wallet">Bitcoin Wallet</a>
-</p>
-<p>
+
+ - [Volker Grabsch](https://github.com/vog) for presenting his project [Bitcoinproof](http://vog.github.io/bitcoinproof) at [Hack Tell](http://berlinhackandtell.rocks) and inspiring this app this way!  
+ - The Tango Project <a href="http://openclipart.org/detail/36067/tango-application-certificate-by-warszawianka"> for the icon</a>
+ - <a href="https://plus.google.com/114712911621260660401">Andreas Schildbach</a> for <a href="https://play.google.com/store/apps/details?id=de.schildbach.wallet">Bitcoin Wallet</a>
   - <a href="https://google.com">Google</a> for Android, Bitcoinj & Guava
-</p>
-<p>
   - <a href="https://blockexplorer.com/">https://blockexplorer.com</a> for the API to check for address existence
-</p>
-<p>
   - <a href="https://plus.google.com/109645840809543546390">Mister Schtief</a> for donating me 0.1BTC which made the barrier low to start this
-</p>
